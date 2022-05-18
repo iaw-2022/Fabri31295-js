@@ -1,6 +1,6 @@
 const Store = () => {
     return(
-        <div>
+        <div className="storeWrapper">
         </div>
     )
 }

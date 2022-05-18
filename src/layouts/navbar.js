@@ -11,8 +11,8 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ms-auto">
-                <Nav.Link as={Link} to="/" >Home</Nav.Link>
-                <Nav.Link as={Link} to="/profile" >About</Nav.Link>
+                <Nav.Link as={Link} to="/portfolio" >Portfolio</Nav.Link>
+                <Nav.Link as={Link} to="/about" >About</Nav.Link>
                 <Navbar.Brand as={Link} to="/" >
                     <img src={logo} style={{width:110, margin: -6}}/>
                 </Navbar.Brand>
@@ -22,8 +22,6 @@ const NavBar = () => {
             </Navbar.Collapse>
         </Container>
         </Navbar>
-            
-
         <section>
             <Outlet></Outlet>
         </section>

@@ -1,11 +1,13 @@
-.App {
-  text-align: center;
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
 }
 
-section {
-  color: rgb(0, 0, 0);
+.App {
+  text-align: center;
+  max-width: 100%;
   background-color: #c28b2db0;
-  height: 100vh;
+  height: auto;
 }
 
 .navBg {
@@ -18,6 +20,199 @@ section {
 .nav-link {
 	display: block;
   margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 27px;
+  margin-left: 65px;
+  margin-right: 87px;
+}
+
+.nav-tabs {
+  border: 1px solid #000000;
+  background-color: #212529e7;
+  border-radius: 50px;
+  vertical-align: middle;
+  position: relative;
+  margin-top: 0;
+}
+
+.nav-tabs .nav-link {
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  text-align:center;
+}
+
+.nav-tabs .nav-link:hover {
+  color: rgb(212, 119, 27);
+  border: 0;
+  text-align:center;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  border: 0;
+}
+
+.nav-tabs > li {
+  float:none;
+  display:inline-block;
+  zoom:1;
+}
+
+.nav {
+  justify-content: space-around;
+}
+
+.tabs {
+  align-items: center;
+  min-height: 100vh; 
+  padding: 50px;
+  left: 50%;
+}
+
+/* About */
+.aboutWrapper {
+  background-color: #d5af6e;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  height: 100vh;
+}
+
+.aboutLeft > img {
+  padding-top: 30px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+  .aboutLeft {
+      display: none;
+  }
+  
+  .contactLeft {
+    display: none;
+  }
+}
+
+.aboutRight > h1 {
+  padding-top: 140px;
+  max-width: 600px;
+  font-size: 32px;
+  text-align: start;
+}
+
+.aboutRight > h2 {
+  max-width: 600px;
+  font-size: 24px;
+  padding-bottom: 25px;
+  text-align: start;
+}
+
+.icons > a {
+  font-size: 50px;
+  padding: 30px;
+  color: #212529e7;
+}
+
+.icons > a:hover {
+  color:rgb(212, 119, 27)
+}
+
+/* Contact */
+.contactWrapper {
+  background-color: #d5af6e;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  height: 100vh;
+}
+
+.contactLeft {
+  padding: 140px 30px 0px 0px;
+  text-align: end;
+}
+
+.contactLeft > h1 {
+  font-weight: bold;
+  font-size: 42px;
+}
+
+.contactLeft > h2 {
+  font-size: 21px;
+}
+
+.contactLeft > a, p {
+  font-weight: bold;
+}
+
+.icons-contact {
+  padding-top: 10px;
+  text-align: end;
+  font-size: 18px;
+}
+
+.contactRight {
+  padding: 130px 0px 0px 20px;
+  text-align: start;
+  max-width: 600px;
+}
+
+.contactRight > input {
+  width: 400px;
+  margin-top: 30px;
+}
+
+.contactRight > p {
+  margin-top: 20px;
+}
+
+#message-form {
+  height: 180px;
+}
+
+/* Profile */
+
+.profileWrapper {
+  background-color: #d5af6e;
+  height: 100vh;
+}
+
+/* Portfolio */
+
+.portfolioWrapper {
+  background-color: #d5af6e;
+  height: 100vh;
+}
+
+/* Home */
+
+.homeWrapper {
+  background-color: #212529;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0px;
+  height: 100vh;
+}
+
+.carousel {
+  display: flex;
+  height: 700px;
+  padding: 50px 200px 0px 200px;
+}
+
+.carousel img {
+  position: relative;
+  top: 0;
+  min-width: 200px;
+  min-height: 200px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 5%;
+}
+
+/* Store */
+
+.storeWrapper {
+  background-color: #d5af6e;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0px;
+  height: 100vh;
 }
