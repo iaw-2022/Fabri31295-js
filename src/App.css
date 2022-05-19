@@ -12,16 +12,14 @@
 
 .navBg {
   justify-content: center;
-  font-size: 18px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+  font-size: 20px;
+  font-family: 'Macondo', cursive;
 }
 
 .nav-link {
 	display: block;
-  margin-top: 15px;
   margin-left: 65px;
-  margin-right: 87px;
+  margin-right: 77px;
 }
 
 .nav-tabs {
@@ -67,32 +65,71 @@
   left: 50%;
 }
 
-/* About */
-.aboutWrapper {
+/*////////////////////////// Home //////////////////////////*/
+
+.homeWrapper {
   background-color: #d5af6e;
+  display: inline;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0px;
+  height: 50vh;
+  max-height: 400px;
+}
+
+#curve {
+  height: 200px;
+  width: 100%;
+}
+
+.footerLinks {
+  color: black;
+  font-weight: bold;
+  padding-bottom: 15px;
+  font-family: 'Macondo', cursive;
+}
+
+.footerLinks a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: #fafafab0;
+}
+
+/*////////////////////////// Carousel //////////////////////////*/
+
+.carousel {
+  max-height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+/*////////////////////////// About //////////////////////////*/
+.aboutWrapper {
+  background-color: #212529e7;
   display: flex;
   justify-content: center;
   margin: 0px;
   height: 100vh;
+  max-height: 800px;
+  color: #cacacae7;
 }
 
 .aboutLeft > img {
-  padding-top: 30px;
-  max-width: 600px;
-}
-
-@media screen and (max-width: 1000px) {
-  .aboutLeft {
-      display: none;
-  }
-  
-  .contactLeft {
-    display: none;
-  }
+  padding-top: 120px;
+  padding-right: 30px;
+  max-width: 500px;
 }
 
 .aboutRight > h1 {
-  padding-top: 140px;
+  padding-top: 190px;
   max-width: 600px;
   font-size: 32px;
   text-align: start;
@@ -108,20 +145,21 @@
 .icons > a {
   font-size: 50px;
   padding: 30px;
-  color: #212529e7;
+  color: #cacacae7;
 }
 
 .icons > a:hover {
-  color:rgb(212, 119, 27)
+  color:rgb(212, 119, 27);
 }
 
-/* Contact */
+/*////////////////////////// Contact //////////////////////////*/
 .contactWrapper {
   background-color: #d5af6e;
   display: flex;
   justify-content: center;
   margin: 0px;
   height: 100vh;
+  max-height: 1000px;
 }
 
 .contactLeft {
@@ -131,7 +169,8 @@
 
 .contactLeft > h1 {
   font-weight: bold;
-  font-size: 42px;
+  font-size: 52px;
+  font-family: 'Macondo', cursive;
 }
 
 .contactLeft > h2 {
@@ -149,7 +188,7 @@
 }
 
 .contactRight {
-  padding: 130px 0px 0px 20px;
+  padding: 0px 0px 0px 20px;
   text-align: start;
   max-width: 600px;
 }
@@ -167,47 +206,53 @@
   height: 180px;
 }
 
-/* Profile */
+#carta {
+  height: 200px;
+  width: 200px;
+  z-index: 1;
+  margin: 0;
+}
+
+/*////////////////////////// Profile //////////////////////////*/
 
 .profileWrapper {
   background-color: #d5af6e;
   height: 100vh;
 }
 
-/* Portfolio */
+/*////////////////////////// Portfolio //////////////////////////*/
 
 .portfolioWrapper {
+  grid-auto-flow: row;
   background-color: #d5af6e;
   height: 100vh;
 }
 
-/* Home */
-
-.homeWrapper {
-  background-color: #212529;
-  justify-content: center;
-  vertical-align: middle;
-  margin: 0px;
-  height: 100vh;
-}
-
-.carousel {
-  display: flex;
-  height: 700px;
-  padding: 50px 200px 0px 200px;
-}
-
-.carousel img {
-  position: relative;
-  top: 0;
-  min-width: 200px;
-  min-height: 200px;
+.imageGrid {
+  padding-top: 30px;
+  width: 300px;
   height: auto;
-  max-width: 100%;
-  border-radius: 5%;
+  margin: 13px 1% 0px 1%;
+  float: left;
 }
 
-/* Store */
+.imageGrid img {
+	width: 100%;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.3s;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-khtml-border-radius: 8px;
+}
+
+.imageGrid img:hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+/*////////////////////////// Store //////////////////////////*/
 
 .storeWrapper {
   background-color: #d5af6e;
@@ -215,4 +260,15 @@
   vertical-align: middle;
   margin: 0px;
   height: 100vh;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .aboutLeft {
+      display: none;
+  }
+  
+  .contactLeft {
+    display: none;
+  }
 }

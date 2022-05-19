@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons' 
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import Carta from '../resources/carta.png'
 
 const Contact = () => {
     return(
@@ -15,6 +16,7 @@ const Contact = () => {
                 </div>
             </div>
             <div class="contactRight">
+            <img id="carta" src={ Carta }/>
                 <input id="name-form" type="string" required placeholder="Enter your name"/>
                 <input id="email-form" type="string" required placeholder="Enter a valid email adress"/>
                 <input id="message-form" type="string" required placeholder="Enter your message"/>
