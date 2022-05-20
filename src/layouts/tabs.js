@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import Tab from './tab'
+import Grid from './grid'
 
 const tabPortfolio = [
     {
        title: "Ilustraciones",
-       content:"Ilustraciones",
+       content:{Grid},
     },
     {
         title: "Fotografia",

@@ -1,11 +1,11 @@
 const Links = () => {
     return(
         <div class="footerLinks">
-            <a href="#">HOME</a> 
+            <a href="/">HOME</a> 
             &nbsp;•&nbsp; 
-            <a href="#">PORTFOLIO</a> 
+            <a href="/portfolio">PORTFOLIO</a> 
             &nbsp;•&nbsp; 
-            <a href="#">STORE</a> 
+            <a href="/store">STORE</a> 
             &nbsp;•&nbsp; 
             2022 Fabricio Almaraz
 	    </div>

@@ -6,63 +6,33 @@
 .App {
   text-align: center;
   max-width: 100%;
-  background-color: #c28b2db0;
+  background-color: #d5af6e;
   height: auto;
 }
 
-.navBg {
-  justify-content: center;
-  font-size: 20px;
+/*////////////////////////// Navbar //////////////////////////*/
+.navbar-expand-lg .navbar-nav {
+  width:100%;
+  justify-content:space-between;
   font-family: 'Macondo', cursive;
-}
-
-.nav-link {
-	display: block;
-  margin-left: 65px;
-  margin-right: 77px;
-}
-
-.nav-tabs {
-  border: 1px solid #000000;
-  background-color: #212529e7;
-  border-radius: 50px;
-  vertical-align: middle;
-  position: relative;
-  margin-top: 0;
-}
-
-.nav-tabs .nav-link {
-  color: #fff;
   font-weight: bold;
-  border: 0;
-  text-align:center;
+  font-size: 18px;
 }
 
-.nav-tabs .nav-link:hover {
-  color: rgb(212, 119, 27);
-  border: 0;
-  text-align:center;
+.navbarCenter {
+  display: flex;
+  width: fit-content;
+  margin-left: 90px;
 }
 
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  border: 0;
+.navbarRight {
+  width: fit-content;
+  display: flex;
 }
 
-.nav-tabs > li {
-  float:none;
-  display:inline-block;
-  zoom:1;
-}
-
-.nav {
-  justify-content: space-around;
-}
-
-.tabs {
-  align-items: center;
-  min-height: 100vh; 
-  padding: 50px;
-  left: 50%;
+#logo {
+  padding-left: 90px;
+  padding-right: 80px;
 }
 
 /*////////////////////////// Home //////////////////////////*/
@@ -78,6 +48,11 @@
 }
 
 #curve {
+  height: 200px;
+  width: 100%;
+}
+
+#curve2 {
   height: 200px;
   width: 100%;
 }
@@ -101,14 +76,16 @@
 /*////////////////////////// Carousel //////////////////////////*/
 
 .carousel {
-  max-height: 400px;
+  max-height: 280px;
   width: 100%;
   overflow: hidden;
 }
 
 .carousel img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-30%);
 }
 
 /*////////////////////////// About //////////////////////////*/
@@ -118,18 +95,18 @@
   justify-content: center;
   margin: 0px;
   height: 100vh;
-  max-height: 800px;
+  max-height: 600px;
   color: #cacacae7;
 }
 
 .aboutLeft > img {
-  padding-top: 120px;
+  padding-top: 60px;
   padding-right: 30px;
   max-width: 500px;
 }
 
 .aboutRight > h1 {
-  padding-top: 190px;
+  padding-top: 100px;
   max-width: 600px;
   font-size: 32px;
   text-align: start;
@@ -213,37 +190,36 @@
   margin: 0;
 }
 
-/*////////////////////////// Profile //////////////////////////*/
-
-.profileWrapper {
-  background-color: #d5af6e;
-  height: 100vh;
-}
-
 /*////////////////////////// Portfolio //////////////////////////*/
 
 .portfolioWrapper {
-  grid-auto-flow: row;
   background-color: #d5af6e;
-  height: 100vh;
+  display: flex;
+  grid-auto-flow: row;
+  min-height: 150vh;
+  height: auto;
 }
 
 .imageGrid {
-  padding-top: 30px;
-  width: 300px;
-  height: auto;
-  margin: 13px 1% 0px 1%;
-  float: left;
+  height: 200px;
+  width: 348px;
+  margin: 21px 1% 0px 1%;
+	border-radius: 8px;
+  display: inline-block;
+  background-color: #2b2b2b;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .imageGrid img {
 	width: 100%;
+  height: 100%;
 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.3s;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
 	-khtml-border-radius: 8px;
+  overflow: hidden;
 }
 
 .imageGrid img:hover {
@@ -271,4 +247,39 @@
   .contactLeft {
     display: none;
   }
+
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(0%);
+  }
+}
+
+/*////////////////////////// Profile //////////////////////////*/
+
+.profileWrapper {
+  background-color: #d5af6e;
+}
+
+/*////////////////////////// Cart //////////////////////////*/
+
+.cart {
+  display: grid;
+  justify-content: center;
+}
+
+.cart > a {
+  margin: 60px;
+  font-size: 50px;
+}
+
+#table {
+  background-color: #212529af;
+  color: #f7f7f7e7;
+  border-color: #000000;
+}
+
+#table > thead {
+  background-color: #212529e7;
 }

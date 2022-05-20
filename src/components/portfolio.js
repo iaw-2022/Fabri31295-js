@@ -1,5 +1,6 @@
 import React from "react"
 import Grid from '../layouts/grid'
+import Links from "../layouts/links"
 
 const Portfolio = () => {
     return(

@@ -7,19 +7,19 @@ const Carrusel = () => {
             <Carousel>
                 <Carousel.Item interval={3000}>
                 <img
-                    src="https://drive.google.com/uc?id=1mxqRMbxMmtfQ30CbsqBeujSeBgx7ToEw&export=media"
+                    src="https://drive.google.com/uc?id=1iDjNDaHZ19iVsFQNUbofvJiVH9uttSKx&export=media"
                     alt="Image One"
                 />
                 </Carousel.Item>
                 <Carousel.Item interval={3000}>
                 <img
-                    src="https://drive.google.com/uc?id=11pUU6yS9HvLUOaXGYvK-1dq3v9SxxEOM&export=media"
+                    src="https://drive.google.com/uc?id=1vTBMZ4LwwcE1Yo37ojbRdr4O8S-cSZp0&export=media"
                     alt="Image Two"
                 />
                 </Carousel.Item>
                 <Carousel.Item interval={3000}>
                 <img
-                    src="https://drive.google.com/uc?id=1CUOweaBn-GV5cR3vqQYZP_DH-yyk-c9t&export=media"
+                    src="https://drive.google.com/uc?id=1aPJpzpfD-rJvpUtzG0njqiLsKP-QfbnZ&export=media"
                     alt="Image Three"
                 />
                 </Carousel.Item>
