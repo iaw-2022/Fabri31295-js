@@ -1,0 +1,139 @@
+/*////////////////////////// Home //////////////////////////*/
+
+.homeWrapper {
+    background-color: #d5af6e;
+    display: inline;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 0px;
+    height: 50vh;
+    max-height: 400px;
+  }
+  
+  #curve {
+    height: 200px;
+    width: 100%;
+  }
+  
+  #curve2 {
+    height: 200px;
+    width: 100%;
+  }
+  
+  .footerLinks {
+    color: black;
+    font-weight: bold;
+    padding-bottom: 15px;
+    font-family: 'Macondo', cursive;
+  }
+  
+  .footerLinks a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .footerLinks a:hover {
+    color: #fafafab0;
+  }
+
+  /*////////////////////////// About //////////////////////////*/
+  .aboutWrapper {
+    background-color: #212529e7;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    height: 100vh;
+    max-height: 600px;
+    color: #cacacae7;
+  }
+  
+  .aboutLeft > img {
+    padding-top: 60px;
+    padding-right: 30px;
+    max-width: 500px;
+  }
+  
+  .aboutRight > h1 {
+    padding-top: 100px;
+    max-width: 600px;
+    font-size: 32px;
+    text-align: start;
+  }
+  
+  .aboutRight > h2 {
+    max-width: 600px;
+    font-size: 24px;
+    padding-bottom: 25px;
+    text-align: start;
+  }
+  
+  .icons > a {
+    font-size: 50px;
+    padding: 30px;
+    color: #cacacae7;
+  }
+  
+  .icons > a:hover {
+    color:rgb(212, 119, 27);
+  }
+  
+/*////////////////////////// Contact //////////////////////////*/
+.contactWrapper {
+    background-color: #d5af6e;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    height: 100vh;
+    max-height: 1000px;
+}
+
+.contactLeft {
+    padding: 140px 30px 0px 0px;
+    text-align: end;
+}
+
+.contactLeft > h1 {
+    font-weight: bold;
+    font-size: 52px;
+    font-family: 'Macondo', cursive;
+}
+
+.contactLeft > h2 {
+    font-size: 21px;
+}
+
+.contactLeft > a, p {
+    font-weight: bold;
+}
+
+.icons-contact {
+    padding-top: 10px;
+    text-align: end;
+    font-size: 18px;
+}
+
+.contactRight {
+    padding: 0px 0px 0px 20px;
+    text-align: start;
+    max-width: 600px;
+}
+
+.contactRight > input {
+    width: 400px;
+    margin-top: 30px;
+}
+
+.contactRight > p {
+    margin-top: 20px;
+}
+
+#message-form {
+    height: 180px;
+}
+
+#carta {
+    height: 200px;
+    width: 200px;
+    z-index: 1;
+    margin: 0;
+}

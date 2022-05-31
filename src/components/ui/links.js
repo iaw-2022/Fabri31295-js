@@ -1,3 +1,4 @@
+import './style.css'
 const Links = () => {
     return(
         <div class="footerLinks">
@@ -6,8 +7,6 @@ const Links = () => {
             <a href="/portfolio">PORTFOLIO</a> 
             &nbsp;•&nbsp; 
             <a href="/store">STORE</a> 
-            &nbsp;•&nbsp; 
-            2022 Fabricio Almaraz
 	    </div>
     )
 }

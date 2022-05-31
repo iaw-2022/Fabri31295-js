@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import perfil from '../resources/perfil.png'
+import perfil from '../../resources/perfil.png'
+import './style.css'
 
 const About = () => {
     return(

@@ -1,9 +1,9 @@
-import Carousel from "../layouts/carousel"
+import Carousel from "../ui/carousel"
 import About from "./about"
-import Curve from '../resources/curva.png'
-import Curve2 from '../resources/curva2.png'
 import Contact from "./contact"
-import Links from "../layouts/links"
+import Curve from '../../resources/curva.png'
+import Links from "../ui/links"
+import './style.css'
 
 const Home = () => {
     return(

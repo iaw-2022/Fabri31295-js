@@ -1,0 +1,68 @@
+/*////////////////////////// Navbar //////////////////////////*/
+.navbar-expand-lg .navbar-nav {
+    width:100%;
+    justify-content:space-between;
+    font-family: 'Macondo', cursive;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .navbarCenter {
+    display: flex;
+    width: fit-content;
+    margin-left: 70px;
+  }
+  
+  .navbarRight {
+    width: fit-content;
+    display: flex;
+  }
+  
+  #logo {
+    padding-left: 90px;
+    padding-right: 80px;
+  }
+
+  /*////////////////////////// Carousel //////////////////////////*/
+  
+  .carousel {
+    max-height: 280px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-30%);
+  }
+
+/*////////////////////////// Links //////////////////////////*/
+
+.footerLinks {
+    margin-top: 20px;
+    height: 20px;
+    background-color: #d5af6e;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+/*////////////////////////// Filter //////////////////////////*/
+
+.filterWrapper {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: rgba(112, 106, 78, 0.563);
+  padding-top: 15px;
+}
+
+.filterWrapper p {
+  margin-left: 20px;
+  margin-right: 20px;
+}

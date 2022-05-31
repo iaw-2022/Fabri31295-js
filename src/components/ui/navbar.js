@@ -1,8 +1,9 @@
-import logo from '../resources/logo.png'
+import logo from '../../resources/logo.png'
 import { Navbar, Nav, Container } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBriefcase, faStore, faShoppingCart } from '@fortawesome/free-solid-svg-icons' 
 import { Outlet, Link } from "react-router-dom"
+import './style.css'
 
 const NavBar = () => {
     return(
@@ -28,9 +29,6 @@ const NavBar = () => {
                         </Nav.Link>
                     </div>
                     <div className='navbarRight'>
-                        <Nav.Link id="cart-icon" as={Link} to="/cart">
-                            <a><FontAwesomeIcon icon={faShoppingCart}/></a>
-                        </Nav.Link>
                         <Nav.Link id="profile-icon" as={Link} to="/profile">
                             Profile &nbsp;
                         </Nav.Link>

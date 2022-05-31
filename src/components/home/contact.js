@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
-import Carta from '../resources/carta.png'
+import Carta from '../../resources/carta.png'
+import './style.css'
 
 const Contact = () => {
     return(
