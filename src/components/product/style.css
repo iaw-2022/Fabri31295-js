@@ -1,13 +1,15 @@
 .store h1 {
   font-size: 80px;
   font-weight: bold;
-  margin: 40px;
+  margin: 20px;
 }
 
 .storeWrapper {
+    position: relative;
+    padding-top: 10px;
     background-color: #d5af6e8a;
-    grid-auto-flow: row;
     min-height: 100vh;
+    z-index: 0;
 }
 
 .card {
@@ -63,4 +65,30 @@
   border: none;
   outline: none;
   box-shadow: none;
+}
+
+#table {
+  text-align: center;
+}
+
+.storeWrapper Button {
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  border-radius: 5px;
+  border-color: cyan;
+}
+
+.storeWrapper Button:hover {
+  
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  border-radius: 5px;
+  border-color: cyan;
+}
+
+.storeWrapper Button:focus {
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  border-radius: 5px;
+  border-color: cyan;
 }

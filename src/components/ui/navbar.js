@@ -1,7 +1,7 @@
 import logo from '../../resources/logo.png'
 import { Navbar, Nav, Container } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBriefcase, faStore, faShoppingCart } from '@fortawesome/free-solid-svg-icons' 
+import {  faBriefcase, faStore } from '@fortawesome/free-solid-svg-icons' 
 import { Outlet, Link } from "react-router-dom"
 import './style.css'
 
