@@ -11,22 +11,89 @@
 }
 
 @media screen and (max-width: 1000px) {
+
   .aboutLeft {
-      display: none;
+    display: none;
   }
   
   .contactLeft {
     display: none;
   }
 
+  #carousel {
+    max-height: 200px;
+    overflow: hidden;
+  }
+
   .carousel img {
+    min-height: 300px;
     width: 100%;
-    height: 100%;
+    overflow: hidden;
     top: 50%;
     transform: translateY(0%);
+  }
+
+  .aboutRight > h1 {
+    padding-top: 20px!important;
+    max-width: 350px!important;
+    font-size: 32px!important;
+    text-align: center!important;
+    color: #d5af6e;
+  }
+
+  .aboutRight > h2 {
+    max-width: 350px!important;
+    font-size: 24px!important;
+    padding-bottom: 25px!important;
+    text-align: center!important;
+  }
+
+  #carta {
+      height: 100px!important;
+      width: 100px!important;
+  }
+
+  .contactRight {
+    padding: 0px 0px 0px 20px!important;
+    text-align: center!important;
+    max-width: 600px!important;
+  }
+
+  .contactRight > input {
+      width: 300px!important;
+  }
+
+  .contactRight > p {
+      margin-top: 20px!important;
+  }
+
+  #contactUs {
+    display: block!important;
   }
 
   #store-png {
     margin-left: -200px;
   }
+
+  .filterWrapper {
+    display: grid!important;
+  }
+
+  .navbarLeft {
+    display: none;
+  }
+
+  .navbarCenter {
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
+    display: grid!important;
+    padding-left: 0px;
+    padding-right: 70px;
+  }
+
+  .navbarRight {
+    font-size: 23px;
+  }
+
 }

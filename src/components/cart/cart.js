@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import { Button } from "react-bootstrap";
 import { ItemCart } from "../itemCart/itemCart";
 import CartContext from "../../context/cartContext"
 import styles from "./styles.module.scss";
@@ -7,7 +8,7 @@ const Cart = () => {
     const [cartOpen, setCartOpen] = useState(false)
     const [productsLength, setProductsLength] = useState(0)
 
-    const {cartItems} = useContext(CartContext)
+    const { cartItems, buyCart } = useContext(CartContext)
 
     useEffect(() => {
         setProductsLength(
@@ -84,6 +85,7 @@ const Cart = () => {
             )}
 
             <h2 className={styles.total}>Total: ${total}</h2>
+            <Button onClick={() => buyCart()}>Buy</Button>
           </div>
         )}
       </div>

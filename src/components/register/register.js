@@ -1,9 +1,9 @@
 import './style.css'
 
-const Profile = () => {
+const Register = () => {
     return(
         <div className="profileWrapper">
         </div>
     )
 }
-export default Profile
+export default Register

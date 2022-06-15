@@ -137,3 +137,8 @@
     z-index: 1;
     margin: 0;
 }
+
+#contactUs {
+  display: none;
+  font-size: 30px;
+}

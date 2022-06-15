@@ -14,7 +14,6 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem("cartProducts", JSON.stringify(cartItems))
-        console.log(cartItems)
     }, [cartItems])
 
     const addItemToCart = (product) => {
@@ -54,9 +53,17 @@ export const CartProvider = ({ children }) => {
             )}
     }
 
+    const buyCart = () => {
+
+        setCartItems(
+            cartItems.filter((productInCart) => productInCart.id === -1)
+        )
+
+    }
+
     return (
         <CartContext.Provider
-            value={{cartItems, addItemToCart, deleteItemToCart}}
+            value={{cartItems, addItemToCart, deleteItemToCart, buyCart}}
         >
             {children}
         </CartContext.Provider>

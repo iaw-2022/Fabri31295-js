@@ -7,7 +7,7 @@ import Home from './components/home/home'
 import Store from './components/store/store'
 import Cart from './components/cart/cart'
 import Portfolio from './components/portfolio/portfolio'
-import Profile from './components/profile/profile'
+import Register from './components/register/register'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
               <Route path='/portfolio' element={<Portfolio/>}/>
               <Route path='/store' element={<Store/>}/>
               <Route path='/cart' element={<Cart/>}/>
-              <Route path='/profile' element={<Profile/>}/>
+              <Route path='/register' element={<Register/>}/>
               <Route path='*' element={<Navigate replace to='/'/>}/>
             </Route>
           </Routes>

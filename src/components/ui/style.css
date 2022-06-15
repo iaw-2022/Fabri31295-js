@@ -1,27 +1,23 @@
 /*////////////////////////// Navbar //////////////////////////*/
 .navbar-expand-lg .navbar-nav {
-    width:100%;
-    justify-content:space-between;
-    font-family: 'Macondo', cursive;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .navbarCenter {
-    display: flex;
-    width: fit-content;
-    margin-left: 70px;
-  }
-  
-  .navbarRight {
-    width: fit-content;
-    display: flex;
-  }
-  
-  #logo {
-    padding-left: 90px;
-    padding-right: 80px;
-  }
+  width:100%;
+  justify-content:space-between;
+  font-family: 'Macondo', cursive;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbarCenter {
+  padding-left: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#logo {
+  padding-left: 50px;
+  margin-right: 50px;
+}
 
   /*////////////////////////// Carousel //////////////////////////*/
   
@@ -53,11 +49,9 @@
 /*////////////////////////// Filter //////////////////////////*/
 
 .filterWrapper {
+  justify-content: space-evenly;
   display: flex;
   margin-bottom: 25px;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
   background-color: rgba(112, 106, 78, 0.563);
   padding-top: 15px;
 }

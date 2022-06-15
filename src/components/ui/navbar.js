@@ -16,7 +16,6 @@ const NavBar = () => {
                     <div className='navbarLeft'></div>
                     <div className="navbarCenter">
                         <Nav.Link as={Link} to="/portfolio">    
-                            <a><FontAwesomeIcon icon={faBriefcase}/></a>
                             &nbsp;
                             Portfolio
                         </Nav.Link>
@@ -25,12 +24,11 @@ const NavBar = () => {
                         </Navbar.Brand>
                         <Nav.Link as={Link} to="/store">
                             Store &nbsp;
-                            <a><FontAwesomeIcon icon={faStore}/></a>
                         </Nav.Link>
                     </div>
                     <div className='navbarRight'>
-                        <Nav.Link id="profile-icon" as={Link} to="/profile">
-                            Profile &nbsp;
+                        <Nav.Link as={Link} to="/register">
+                            Log out &nbsp;
                         </Nav.Link>
                     </div>
                 </Nav>
