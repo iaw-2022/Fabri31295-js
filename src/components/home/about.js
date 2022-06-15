@@ -10,12 +10,12 @@ const About = () => {
                 <img src={perfil} alt="Joaquin"/>
             </div>
             <div class="aboutRight">
-                <h1>Hey! My name is Fabricio. I am a web &amp; font <span class="introBreak"></span>designer based in Bahia Blanca</h1>
-                <h2>I have been working as a freelance designer and front-end developer since 2007. I’ve always been someone who has both a creative and a logical side. When I discovered web design in college, I realized it would be the perfect fit. I could use my creative side to design and my logical side to code. As a bonus, being both designer and developer allows me to make sure no detail is lost in translation.</h2>
+                <h1>Hey! My name is Fabricio. I am a graphic &amp; font <span class="introBreak"></span>designer based in Bahia Blanca</h1>
+                <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h2>
                 <div class="icons">
-                    <a href=""><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a href=""><FontAwesomeIcon icon={faPinterest} /></a>
-                    <a href=""><FontAwesomeIcon icon={faTwitter} /></a>
+                    <a href="/"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="/"><FontAwesomeIcon icon={faPinterest} /></a>
+                    <a href="/"><FontAwesomeIcon icon={faTwitter} /></a>
                 </div>
             </div>
         </div>

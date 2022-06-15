@@ -27,7 +27,7 @@ const NavBar = () => {
                         </Nav.Link>
                     </div>
                     <div className='navbarRight'>
-                        <Nav.Link as={Link} to="/register">
+                        <Nav.Link as={Link} to="/">
                             Log out &nbsp;
                         </Nav.Link>
                     </div>
