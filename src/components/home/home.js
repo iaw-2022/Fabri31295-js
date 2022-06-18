@@ -10,7 +10,7 @@ const Home = () => {
         <div className="homeWrapper">
             <Carousel/>
             <About/>
-            <img id="curve" src={ Curve }/>
+            <img id="curve" src={ Curve } alt="imagen decorativa"/>
             <Contact/>
             <Links/>
         </div>

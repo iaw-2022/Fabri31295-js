@@ -16,12 +16,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<NavBar/>}>
-              <Route path='/' element={<Home/>}/>
+              <Route path='/home' element={<Home/>}/>
               <Route path='/portfolio' element={<Portfolio/>}/>
               <Route path='/store' element={<Store/>}/>
               <Route path='/cart' element={<Cart/>}/>
               <Route path='/register' element={<Register/>}/>
-              <Route path='*' element={<Navigate replace to='/'/>}/>
+              <Route path='/' element={<Navigate replace to='/home'/>}/>
             </Route>
           </Routes>
         </BrowserRouter>

@@ -17,7 +17,7 @@ const Contact = () => {
                 </div>
             </div>
             <div class="contactRight">
-            <img id="carta" src={ Carta }/>
+            <img id="carta" src={ Carta } alt="carta"/>
                 <p id="contactUs">Contact Us</p>
                 <input id="name-form" type="string" required placeholder="Enter your name"/>
                 <input id="email-form" type="string" required placeholder="Enter a valid email adress"/>
