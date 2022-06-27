@@ -1,38 +1,99 @@
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
 .App {
   text-align: center;
+  max-width: 100%;
+  background-color: #d5af6e;
+  height: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media screen and (max-width: 1000px) {
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .aboutLeft {
+    display: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .contactLeft {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  #carousel {
+    max-height: 200px;
+    overflow: hidden;
   }
+
+  .carousel img {
+    min-height: 300px;
+    width: 100%;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(0%);
+  }
+
+  .aboutRight > h1 {
+    padding-top: 20px!important;
+    max-width: 350px!important;
+    font-size: 32px!important;
+    text-align: center!important;
+    color: #d5af6e;
+  }
+
+  .aboutRight > h2 {
+    max-width: 350px!important;
+    font-size: 24px!important;
+    padding-bottom: 25px!important;
+    text-align: center!important;
+  }
+
+  #carta {
+      height: 100px!important;
+      width: 100px!important;
+  }
+
+  .contactRight {
+    padding: 0px 0px 0px 20px!important;
+    text-align: center!important;
+    max-width: 600px!important;
+  }
+
+  .contactRight > input {
+      width: 300px!important;
+  }
+
+  .contactRight > p {
+      margin-top: 20px!important;
+  }
+
+  #contactUs {
+    display: block!important;
+  }
+
+  #store-png {
+    margin-left: -200px;
+  }
+
+  .filterWrapper {
+    display: grid!important;
+  }
+
+  .navbarLeft {
+    display: none;
+  }
+
+  .navbarCenter {
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
+    display: grid!important;
+    padding-left: 0px;
+    padding-right: 70px;
+  }
+
+  .navbarRight {
+    font-size: 23px;
+  }
+
 }

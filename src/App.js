@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { CartProvider } from './context/cartContext'
+import './App.css'
+
+import NavBar from './components/ui/navbar'
+import Home from './components/home/home'
+import Store from './components/store/store'
+import Cart from './components/cart/cart'
+import Portfolio from './components/portfolio/portfolio'
+import Register from './components/register/register'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Proyecto Javascript - Web 2022
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<NavBar/>}>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/portfolio' element={<Portfolio/>}/>
+              <Route path='/store' element={<Store/>}/>
+              <Route path='/cart' element={<Cart/>}/>
+              <Route path='/register' element={<Register/>}/>
+              <Route path='*' element={<Navigate replace to='/'/>}/>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
