@@ -28,7 +28,7 @@ const Cart = () => {
           }} 
           className={styles.buttonCartContainer}
         >
-          <div className={styles.buttonCart}>
+          <Button className={styles.buttonCart}>
             {!cartOpen ? (
               <svg
               className={styles.open}
@@ -65,7 +65,7 @@ const Cart = () => {
               />
             </svg>
             )}
-          </div>
+          </Button>
           {!cartOpen && (
           <div className={styles.productsNumber}>{productsLength}</div>
         )}
