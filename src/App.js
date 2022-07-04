@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/cartContext'
+import NotificationProvider from './notifications/NotificationProvider'
 import './App.css'
 
 import NavBar from './components/ui/navbar'
@@ -12,20 +13,22 @@ import Register from './components/register/register'
 function App() {
   return (
     <div className="App">
-      <CartProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<NavBar/>}>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/portfolio' element={<Portfolio/>}/>
-              <Route path='/store' element={<Store/>}/>
-              <Route path='/cart' element={<Cart/>}/>
-              <Route path='/register' element={<Register/>}/>
-              <Route path='*' element={<Navigate replace to='/'/>}/>
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </CartProvider>
+      <NotificationProvider>
+        <CartProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<NavBar />}>
+                <Route path='/home' element={<Home />} />
+                <Route path='/portfolio' element={<Portfolio />} />
+                <Route path='/store' element={<Store />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/' element={<Navigate replace to='/home' />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </CartProvider>
+      </NotificationProvider>
     </div>
   );
 }

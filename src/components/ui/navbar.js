@@ -19,15 +19,15 @@ const NavBar = () => {
                             &nbsp;
                             Portfolio
                         </Nav.Link>
-                        <Navbar.Brand id="logo" as={Link} to="/" >
-                            <img src={logo} style={{width:90, margin: -12}}/>
+                        <Navbar.Brand id="logo" as={Link} to="/home" >
+                            <img src={logo} style={{width:90, margin: -12}} alt="logo"/>
                         </Navbar.Brand>
                         <Nav.Link as={Link} to="/store">
                             Store &nbsp;
                         </Nav.Link>
                     </div>
                     <div className='navbarRight'>
-                        <Nav.Link as={Link} to="/">
+                        <Nav.Link as={Link} to="/home">
                             Log out &nbsp;
                         </Nav.Link>
                     </div>

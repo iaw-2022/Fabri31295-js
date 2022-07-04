@@ -5,32 +5,32 @@ import CartContext from "../../context/cartContext"
 import styles from "./styles.module.scss";
 
 const Cart = () => {
-    const [cartOpen, setCartOpen] = useState(false)
-    const [productsLength, setProductsLength] = useState(0)
+  const [cartOpen, setCartOpen] = useState(false)
+  const [productsLength, setProductsLength] = useState(0)
 
-    const { cartItems, buyCart } = useContext(CartContext)
+  const { cartItems, buyCart } = useContext(CartContext)
 
-    useEffect(() => {
-        setProductsLength(
-            cartItems.reduce((previous, current) => previous + current.amount, 0)
-        )
-    }, [cartItems])
-
-    const total = cartItems.reduce(
-        (previous, current) => previous + current.amount * current.price,
-        0
+  useEffect(() => {
+    setProductsLength(
+      cartItems.reduce((previous, current) => previous + current.amount, 0)
     )
+  }, [cartItems])
 
-    return (
-      <div className={styles.cartContainer}>
-        <div onClick={() => {
-          setCartOpen(!cartOpen)
-          }} 
-          className={styles.buttonCartContainer}
-        >
-          <div className={styles.buttonCart}>
-            {!cartOpen ? (
-              <svg
+  const total = cartItems.reduce(
+    (previous, current) => previous + current.amount * current.price,
+    0
+  )
+
+  return (
+    <div className={styles.cartContainer}>
+      <div onClick={() => {
+        setCartOpen(!cartOpen)
+      }}
+        className={styles.buttonCartContainer}
+      >
+        <Button className={styles.buttonCart}>
+          {!cartOpen ? (
+            <svg
               className={styles.open}
               width={"35px"}
               viewBox="0 0 30 27"
@@ -51,8 +51,8 @@ const Cart = () => {
               />
             </svg>
 
-            ) : (
-              <svg
+          ) : (
+            <svg
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -64,32 +64,32 @@ const Cart = () => {
                 fill="#F0F0F0"
               />
             </svg>
-            )}
-          </div>
-          {!cartOpen && (
+          )}
+        </Button>
+        {!cartOpen && (
           <div className={styles.productsNumber}>{productsLength}</div>
         )}
-        </div>
-        {cartItems && cartOpen && (
-          <div className={styles.cart}>
-            <h2>Your Cart</h2>
-
-            {cartItems.length === 0 ? (
-              <p className={styles.cartVacio}>Your cart is empty</p>
-            ) : (
-              <div className={styles.productsContainer}>
-                {cartItems.map((item, i) => (
-                  <ItemCart key={i} item={item} />
-                ))}
-              </div>
-            )}
-
-            <h2 className={styles.total}>Total: ${total}</h2>
-            <Button onClick={() => buyCart()}>Buy</Button>
-          </div>
-        )}
       </div>
-    )
+      {cartItems && cartOpen && (
+        <div className={styles.cart}>
+          <h2>Your Cart</h2>
+
+          {cartItems.length === 0 ? (
+            <p className={styles.cartVacio}>Your cart is empty</p>
+          ) : (
+            <div className={styles.productsContainer}>
+              {cartItems.map((item, i) => (
+                <ItemCart key={i} item={item} />
+              ))}
+            </div>
+          )}
+
+          <h2 className={styles.total}>Total: ${total}</h2>
+          <Button onClick={() => buyCart()}>Buy</Button>
+        </div>
+      )}
+    </div>
+  )
 }
 
 export default Cart
