@@ -2,14 +2,16 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/cartContext'
 import NotificationProvider from './notifications/NotificationProvider'
 import * as serviceWorker from './serviceWorker';
+import { lazy, Suspense } from 'react';
 import './App.css'
 
-import NavBar from './components/ui/navbar'
-import Home from './components/home/home'
-import Store from './components/store/store'
-import Cart from './components/cart/cart'
-import Portfolio from './components/portfolio/portfolio'
-import Register from './components/register/register'
+const NavBar = lazy(() => import('./components/ui/navbar'))
+const Home = lazy(() => import('./components/home/home'))
+const Portfolio = lazy(() => import('./components/portfolio/portfolio'))
+const Store = lazy(() => import('./components/store/store'))
+const Cart = lazy(() => import('./components/cart/cart'))
+const Register = lazy(() => import('./components/register/register'))
+
 
 function App() {
   return (
@@ -17,16 +19,18 @@ function App() {
       <NotificationProvider>
         <CartProvider>
           <BrowserRouter>
-            <Routes>
-              <Route path='/' element={<NavBar />}>
-                <Route path='/home' element={<Home />} />
-                <Route path='/portfolio' element={<Portfolio />} />
-                <Route path='/store' element={<Store />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/register' element={<Register />} />
-                <Route path='/' element={<Navigate replace to='/home' />} />
-              </Route>
-            </Routes>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path='/' element={<NavBar />}>
+                  <Route path='/home' element={<Home />} />
+                  <Route path='/portfolio' element={<Portfolio />} />
+                  <Route path='/store' element={<Store />} />
+                  <Route path='/cart' element={<Cart />} />
+                  <Route path='/register' element={<Register />} />
+                  <Route path='/' element={<Navigate replace to='/home' />} />
+                </Route>
+              </Routes>
+            </Suspense>
           </BrowserRouter>
         </CartProvider>
       </NotificationProvider>
