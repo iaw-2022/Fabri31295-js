@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/cartContext'
 import NotificationProvider from './notifications/NotificationProvider'
+import * as serviceWorker from './serviceWorker';
 import './App.css'
 
 import NavBar from './components/ui/navbar'
@@ -32,5 +33,7 @@ function App() {
     </div>
   );
 }
+
+serviceWorker.register();
 
 export default App;

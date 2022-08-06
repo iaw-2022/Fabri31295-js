@@ -29,6 +29,7 @@ const Cart = () => {
         className={styles.buttonCartContainer}
       >
         <Button className={styles.buttonCart}>
+          Cart
           {!cartOpen ? (
             <svg
               className={styles.open}

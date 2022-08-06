@@ -50,9 +50,8 @@ const Notification = props => {
     <div
       onMouseEnter={handlePauseTimer}
       onMouseLeave={handleStartTimer}
-      className={`notification-item ${
-        props.type === "SUCCESS" ? "success" : "error"
-      } ${exit ? "exit" : ""}`}
+      className={`notification-item ${props.type === "SUCCESS" ? "success" : "error"
+        } ${exit ? "exit" : ""}`}
     >
       <p>{props.message}</p>
       <div className={"bar"} style={{ width: `${width}%` }} />
