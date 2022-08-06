@@ -17,7 +17,6 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-shopping-cart": "^1.9.5",
     "sass": "^1.52.3",
     "serve": "^14.0.1",
     "web-vitals": "^2.1.4",
