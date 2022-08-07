@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/cartContext'
 import NotificationProvider from './notifications/NotificationProvider'
-import * as serviceWorker from './serviceWorker';
 import { lazy, Suspense } from 'react';
 import './App.css'
 
@@ -37,7 +36,5 @@ function App() {
     </div>
   );
 }
-
-serviceWorker.register();
 
 export default App;
