@@ -1,6 +1,6 @@
 {
-  "short_name": "Mi PWA",
-  "name": "Mi PWA",
+  "short_name": "PWA",
+  "name": "Portfolio PWA",
   "icons": [
     {
       "src": "favicon.ico",
