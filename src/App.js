@@ -28,7 +28,7 @@ function App() {
     const messagingResolve = await messaging;
 
     const token = await getToken(messagingResolve, {
-      vapidKey: "BNi3xjbJKrRmuAKiaxovpTYtsQecnLGRScnaWmsjt3j2PSOLEXK88VkIPFZQCmJHAuSXdS2vg3t2k5vm_bqeq50"
+      vapidKey: "BORVT5X7poehLz2cJlmIP7LW3qTYrKrSU-pFeez2sXjtH3v9nGmQWRg9vaMi7EqBIQEgwyXU4ouWuXEyPHXAgNg"
     }).catch(err => console.log(err));
 
     if (token) console.log("Your token is: ", token);
