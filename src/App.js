@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/cartContext'
 import NotificationProvider from './notifications/NotificationProvider'
-import { lazy, Suspense } from 'react';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { lazy, Suspense, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { getAuth, signInAnonymously } from "firebase/auth"
+import { getToken, onMessage } from "firebase/messaging";
+import { messaging } from './firebase';
 import './App.css'
 
 const NavBar = lazy(() => import('./components/ui/navbar'))
@@ -13,21 +16,45 @@ const Store = lazy(() => import('./components/store/store'))
 const Cart = lazy(() => import('./components/cart/cart'))
 const Register = lazy(() => import('./components/register/register'))
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDBHZ9OZGKLHZkZDc0lLBam2OjhTv4-BiA",
-  authDomain: "webjs-f949b.firebaseapp.com",
-  projectId: "webjs-f949b",
-  storageBucket: "webjs-f949b.appspot.com",
-  messagingSenderId: "362341515411",
-  appId: "1:362341515411:web:1899ec6adb41277f7f8d66",
-  measurementId: "G-ZVNPCR36DY"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 function App() {
+
+  const login = () => {
+    signInAnonymously(getAuth()).then(user => console.log(user))
+    activateMessages()
+  }
+
+  const activateMessages = async () => {
+
+    const messagingResolve = await messaging;
+
+    const token = await getToken(messagingResolve, {
+      vapidKey: "BNi3xjbJKrRmuAKiaxovpTYtsQecnLGRScnaWmsjt3j2PSOLEXK88VkIPFZQCmJHAuSXdS2vg3t2k5vm_bqeq50"
+    }).catch(err => console.log(err));
+
+    if (token) console.log("Your token is: ", token);
+    else console.log("Something went wrong with your token");
+  }
+
+  const onMessageListener = async () =>
+    new Promise((resolve) =>
+      (async () => {
+        const messagingResolve = await messaging;
+        onMessage(messagingResolve, (payload) => {
+          console.log('On message: ', messaging, payload);
+          toast(payload.notification.title + " " + payload.notification.body)
+          resolve(payload);
+        });
+      })()
+    );
+
+    useEffect(() => {
+      if (messaging) {
+        login();
+      }
+      onMessageListener();
+    }, [login, onMessageListener]);
+
+
   return (
     <div className="App">
       <NotificationProvider>
