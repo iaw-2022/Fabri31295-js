@@ -27,9 +27,6 @@ const NavBar = () => {
                         </Nav.Link>
                     </div>
                     <div className='navbarRight'>
-                        <Nav.Link as={Link} to="/home">
-                            Log out &nbsp;
-                        </Nav.Link>
                     </div>
                 </Nav>
             </Navbar.Collapse>

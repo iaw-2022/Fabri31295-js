@@ -3,6 +3,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
+import { StaleWhileRevalidate } from "workbox-strategies";
 import { CacheFirst } from "workbox-strategies";
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { RangeRequestsPlugin } from "workbox-range-requests";
@@ -32,60 +33,36 @@ registerRoute(
 );
 
 registerRoute(
-    // Custom `matchCallback` function
-    ({ event }) => event.request.destination === 'image',
-    new CacheFirst({
-        cacheName: 'image',
-        plugins: [
-            new CacheableResponsePlugin({ statuses: [200] }),
-            new RangeRequestsPlugin(),
-            new ExpirationPlugin({
-                maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
-            }),
-        ],
-        matchOptions: {
-            ignoreSearch: true,
-            ignoreVary: true
-        }
+    // Add in any other file extensions or routing criteria as needed.
+    ({ url }) =>
+      url.origin === self.location.origin && url.pathname.endsWith(".png"), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+    new StaleWhileRevalidate({
+      cacheName: "images",
+      plugins: [
+        // Ensure that once this runtime cache reaches a maximum size the
+        // least-recently used images are removed.
+        new ExpirationPlugin({ maxEntries: 50 }),
+      ],
     })
-);
-
-
-
-registerRoute(
-    new RegExp('https://trailerama-api.herokuapp.com/(.*)'),
-    new CacheFirst({
-        cacheName: 'api-data',
-        plugins: [
-            new ExpirationPlugin({
-                maxAgeSeconds: 15 * 24 * 60 * 60
-            })
-        ],
-        method: 'GET',
-        cacheableResponse: {
-            statuses: [0, 200]
-        }
-    })
-);
-
-registerRoute(
-    new RegExp('https://imdb-api.com/(.*)'),
-    new CacheFirst({
-        cacheName: 'IMDB-data',
-        plugins: [
-            new ExpirationPlugin({
-                maxAgeSeconds: 15 * 24 * 60 * 60
-            })
-        ],
-        method: 'GET',
-        cacheableResponse: {
-            statuses: [0, 200]
-        }
-    })
-);
-
-self.addEventListener("message", (event) => {
+  );
+  self.addEventListener("message", (event) => {
     if (event.data && event.data.type === "SKIP_WAITING") {
-        self.skipWaiting();
+      self.skipWaiting();
     }
-})
+  });
+
+  registerRoute(
+      new RegExp('https://proyecto-api-fabricio.herokuapp.com/(.*)'),
+      new CacheFirst({
+          cacheName: 'api-data',
+          plugins: [
+              new ExpirationPlugin({
+                  maxAgeSeconds: 15 * 24 * 60 * 60
+              })
+          ],
+          method: 'GET',
+          cacheableResponse: {
+              statuses: [0, 200]
+          }
+      })
+  );

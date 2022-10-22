@@ -142,3 +142,13 @@
   display: none;
   font-size: 30px;
 }
+
+.notificationsButton {
+  position: absolute;
+  z-index: 9999;
+  top: 13px;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+}

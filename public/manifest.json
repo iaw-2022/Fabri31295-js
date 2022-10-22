@@ -1,6 +1,13 @@
 {
-  "short_name": "PWA",
   "name": "Portfolio PWA",
+  "short_name": "PWA",
+  "scope": "/app/",
+  "start_url": ".",
+  "display": "standalone",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "categories": [ "shopping", "photo"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +24,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
