@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Card, Button } from "react-bootstrap"
 import CartContext from '../../context/cartContext'
 import { useNotification } from '../../notifications/NotificationProvider'
+import { BASE_URL } from '../../utilities'
 import './style.css'
 
 const Product = () => {
@@ -9,7 +10,7 @@ const Product = () => {
     const { addItemToCart } = useContext(CartContext)
     const dispatch = useNotification();
 
-    const URL = 'https://proyecto-api-fabricio.herokuapp.com/images'
+    const URL = BASE_URL + '/images'
     const showData = async () => {
         const response = await fetch(URL)
         const data = await response.json()

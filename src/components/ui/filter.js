@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { BASE_URL } from '../../utilities'
 import './style.css'
 
 const Filter = (props) => {
@@ -10,9 +11,9 @@ const Filter = (props) => {
     const [ resultResolutions, setResultResolutions ] = useState("")
     const [ resultInput, setResultInput ] = useState("")
 
-    const URLImages = 'https://proyecto-api-fabricio.herokuapp.com/images'
-    const URLCategories = 'https://proyecto-api-fabricio.herokuapp.com/categories'
-    const ULRResolutions = 'https://proyecto-api-fabricio.herokuapp.com/resolutions'
+    const URLImages = BASE_URL + '/images'
+    const URLCategories = BASE_URL + '/categories'
+    const ULRResolutions = BASE_URL + '/resolutions'
 
     const showData = async () => {
         const response = await fetch(URLImages)
