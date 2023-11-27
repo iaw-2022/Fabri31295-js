@@ -19,22 +19,6 @@
     height: 200px;
     width: 100%;
   }
-  
-  .footerLinks {
-    color: black;
-    font-weight: bold;
-    padding-bottom: 15px;
-    font-family: 'Macondo', cursive;
-  }
-  
-  .footerLinks a {
-    color: #000000;
-    text-decoration: none;
-  }
-  
-  .footerLinks a:hover {
-    color: #fafafab0;
-  }
 
   /*////////////////////////// About //////////////////////////*/
   .aboutWrapper {

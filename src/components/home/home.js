@@ -2,7 +2,6 @@ import Carousel from "../ui/carousel"
 import About from "./about"
 import Contact from "./contact"
 import Curve from '../../resources/curva.png'
-import Links from "../ui/links"
 import './style.css'
 import Toast from "../toast/Toast"
 
@@ -14,7 +13,6 @@ const Home = () => {
             <Toast />
             <img id="curve" src={ Curve } alt="imagen decorativa"/>
             <Contact/>
-            <Links/>
         </div>
     )
 }

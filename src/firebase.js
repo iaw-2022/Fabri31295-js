@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { BASE_URL } from './utilities';
 
 var firebaseConfig = {
     apiKey: "AIzaSyD3S0E6WFRphPVqUQWhLeZmC5Mr2nsr6ok",
@@ -18,8 +19,7 @@ export const requestForToken = () => {
     return getToken(messaging, { vapidKey: 'BLcDk4wSJD7eH4KLJk-mP3AmEUvbTguxGyyTbdYNdslcjtBjt8crGVf6YYaYFWJy9L-hLgcUV-x0oJmo6MVrM70' })
       .then((currentToken) => {
         if (currentToken) {
-          console.log('current token for client: ', currentToken);
-          // Perform any other neccessary action with the token
+          sendTokenToBackend(currentToken);
         } else {
           // Show permission request UI
           console.log('No registration token available. Request permission to generate one.');
@@ -30,10 +30,35 @@ export const requestForToken = () => {
       });
 };
 
+const sendTokenToBackend = (token) => {
+  // URL de tu endpoint en Laravel para agregar el token
+  const url = BASE_URL + '/addToken';
+
+  // Datos que se enviarán en la solicitud POST
+  const data = {
+      token: token,
+  };
+
+  // Configuración de la solicitud POST
+  const options = {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+  };
+
+  // Realizar la solicitud POST usando fetch
+  fetch(url, options)
+      .then(response => response.json())
+      .catch(error => {
+          console.error('El token ya existe');
+      });
+};
+
 export const onMessageListener = () =>
   new Promise((resolve) => {
     onMessage(messaging, (payload) => {
-      console.log("payload", payload)
       resolve(payload);
     });
   });
