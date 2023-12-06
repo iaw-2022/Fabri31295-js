@@ -1,11 +1,16 @@
+import React from 'react';
 import logo from '../../resources/logo.png'
-import { Navbar, Nav, Container } from "react-bootstrap"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBriefcase, faStore } from '@fortawesome/free-solid-svg-icons' 
+import { Navbar, Nav, Container, Button } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
+import { requestNotificationPermission } from '../../firebase'
 import './style.css'
 
 const NavBar = () => {
+
+    const initializeApp = async () => {
+        await requestNotificationPermission();
+      };
+
     return(
         <>
         <Navbar className="navBg" bg="dark" variant="dark" expand="lg">
@@ -27,9 +32,11 @@ const NavBar = () => {
                         </Nav.Link>
                     </div>
                     <div className='navbarRight'>
-                        <Nav.Link as={Link} to="/home">
-                            Log out &nbsp;
-                        </Nav.Link>
+                        <Button
+                            onClick={() => initializeApp()}
+                        >
+                            act
+                        </Button>
                     </div>
                 </Nav>
             </Navbar.Collapse>

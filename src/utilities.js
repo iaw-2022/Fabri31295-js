@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://f9421wrw-8080.brs.devtunnels.ms';
+export const BASE_URL = 'https://api-dejm.onrender.com';

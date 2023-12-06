@@ -1,5 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import 'firebase/firestore';
+import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, CACHE_SIZE_UNLIMITED  } from 'firebase/firestore';
 import { BASE_URL } from './utilities';
 
 var firebaseConfig = {
@@ -11,11 +13,32 @@ var firebaseConfig = {
     appId: "1:132022508769:web:d15a3746b27513dd03aba0"
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+initializeFirestore(app, 
+{localCache: 
+  persistentLocalCache({tabManager: persistentMultipleTabManager()})
+});
 
 const messaging = getMessaging();
 
-export const requestForToken = () => {
+export const requestNotificationPermission = async () => {
+  try {
+    const permission = await Notification.requestPermission();
+    console.log('Notification permission:', permission);
+
+    if (permission === 'granted') {
+      requestForToken(); // Si el permiso se concede, solicitar el token de FCM
+    } else {
+      // Manejar el caso en que el usuario deniega los permisos
+      console.log('El usuario denegó los permisos de notificación.');
+    }
+  } catch (error) {
+    console.error('Error al solicitar permisos de notificación:', error);
+  }
+};
+
+export const requestForToken = async () => {
     return getToken(messaging, { vapidKey: 'BLcDk4wSJD7eH4KLJk-mP3AmEUvbTguxGyyTbdYNdslcjtBjt8crGVf6YYaYFWJy9L-hLgcUV-x0oJmo6MVrM70' })
       .then((currentToken) => {
         if (currentToken) {
