@@ -154,3 +154,30 @@
 .notification-item.error .bar {
   background-color: red;
 }
+
+
+.storePlaceholders {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Three columns with equal width */
+  gap: 16px; /* Adjust the gap between items as needed */
+}
+
+/* Style for each individual item */
+.storePlaceholders > div {
+  width: 100%; /* Ensure each item takes the full width of its grid cell */
+  height: 100%;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .storePlaceholders {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Additional responsive styles for even smaller screens */
+@media (max-width: 576px) {
+  .storePlaceholders {
+    grid-template-columns: 1fr;
+  }
+}

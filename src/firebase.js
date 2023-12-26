@@ -29,29 +29,49 @@ export const requestNotificationPermission = async () => {
 
     if (permission === 'granted') {
       requestForToken(); // Si el permiso se concede, solicitar el token de FCM
-    } else {
-      // Manejar el caso en que el usuario deniega los permisos
+    } else if (permission === 'denied') {
       console.log('El usuario denegó los permisos de notificación.');
+      showNotificationDeniedMessage();
     }
   } catch (error) {
     console.error('Error al solicitar permisos de notificación:', error);
   }
 };
 
-export const requestForToken = async () => {
-    return getToken(messaging, { vapidKey: 'BLcDk4wSJD7eH4KLJk-mP3AmEUvbTguxGyyTbdYNdslcjtBjt8crGVf6YYaYFWJy9L-hLgcUV-x0oJmo6MVrM70' })
-      .then((currentToken) => {
-        if (currentToken) {
-          sendTokenToBackend(currentToken);
-        } else {
-          // Show permission request UI
-          console.log('No registration token available. Request permission to generate one.');
-        }
-      })
-      .catch((err) => {
-        console.log('An error occurred while retrieving token. ', err);
-      });
+const showNotificationDeniedMessage = () => {
+  alert('Al parecer has denegado las notificaciones para este sitio, por favor, ve a la configuración del navegador y permite las notificaciones para este sitio.');
 };
+
+export const requestForToken = async (maxRetries = 2) => {
+  let retries = 0;
+
+  const attemptRequest = async () => {
+    try {
+      const currentToken = await getToken(messaging, { vapidKey: 'BLcDk4wSJD7eH4KLJk-mP3AmEUvbTguxGyyTbdYNdslcjtBjt8crGVf6YYaYFWJy9L-hLgcUV-x0oJmo6MVrM70' });
+      
+      if (currentToken) {
+        sendTokenToBackend(currentToken);
+      } else {
+        console.log('No registration token available. Request permission to generate one.');
+      }
+    } catch (err) {
+      console.log('An error occurred while retrieving token. ', err);
+
+      retries++;
+      if (retries <= maxRetries) {
+        console.log(`Retrying request. Attempt ${retries}/${maxRetries}`);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        await attemptRequest(); // Reintentar la solicitud
+      } else {
+        console.error('Max retries reached. Unable to get token.');
+        alert('Error al obtener el token. Por favor, inténtelo nuevamente.');
+      }
+    }
+  };
+
+  await attemptRequest();
+};
+
 
 const sendTokenToBackend = (token) => {
   // URL de tu endpoint en Laravel para agregar el token
@@ -74,6 +94,9 @@ const sendTokenToBackend = (token) => {
   // Realizar la solicitud POST usando fetch
   fetch(url, options)
       .then(response => response.json())
+      .then(data => {
+        alert('Notificaciones activadas!');
+      })
       .catch(error => {
           console.error('El token ya existe');
       });

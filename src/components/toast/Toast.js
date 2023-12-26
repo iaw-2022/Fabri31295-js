@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { requestForToken, onMessageListener } from '../../firebase';
 
-const Toast = () => {
+const Toasts = () => {
   const [notification, setNotification] = useState({title: '', body: ''});
   const notify = () =>  toast(<ToastDisplay/>);
   function ToastDisplay() {
@@ -20,8 +20,6 @@ const Toast = () => {
     }
   }, [notification])
 
-  requestForToken();
-
   onMessageListener()
     .then((payload) => {
       setNotification({title: payload?.notification?.title, body: payload?.notification?.body});     
@@ -33,4 +31,4 @@ const Toast = () => {
   )
 }
 
-export default Toast
+export default Toasts

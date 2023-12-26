@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Placeholder } from 'react-bootstrap'
 import { BASE_URL } from '../../utilities'
 import './style.css'
 
@@ -16,13 +17,22 @@ const Filter = (props) => {
     const ULRResolutions = BASE_URL + '/resolutions'
 
     const showData = async () => {
-        const response = await fetch(URLImages)
-        const response2 = await fetch(URLCategories)
-        const response3 = await fetch(ULRResolutions)
-        setImages(await response.json())
-        setCategories(await response2.json())
-        setResolutions(await response3.json())
-    }
+        try {
+          const response = await fetch(URLImages);
+          const response2 = await fetch(URLCategories);
+          const response3 = await fetch(ULRResolutions);
+    
+          if (!response.ok || !response2.ok || !response3.ok) {
+            throw new Error('HTTP error!');
+          }
+    
+          setImages(await response.json());
+          setCategories(await response2.json());
+          setResolutions(await response3.json());
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
 
     useEffect( ()=> {
         showData()
@@ -49,6 +59,13 @@ const Filter = (props) => {
             dato.id.toLowerCase().includes(resultInput.toLocaleLowerCase())
         )
     ))
+
+    const stylePlaceholder = {
+        height: '200px',
+        width: '348px', 
+        margin: '0px 1% 21px 1%',
+        borderRadius: '8px',
+    }
 
     return(
         <div>
@@ -80,16 +97,26 @@ const Filter = (props) => {
                     </p>
                 </form>
             </div>
-            <div>
-                <div className='results'>
-                {results.map((imagen) => (
-                    <div className="imageGrid">
-                        <a>
-                            <img src={imagen.url} alt={imagen.name}/>
+            <div className='results'>
+                {results ? (
+                    results.map((imagen) => (
+                    <div key={imagen.id} className="imageGrid">
+                        <a href="#">
+                        <img src={imagen.url} alt={imagen.name} />
                         </a>
                     </div>
-                ))}
-                </div>
+                    ))
+                ) : (
+                    <div className='portfolioPlaceholders'>
+                    {[1, 2, 3, 4, 5, 6].map((index) => (
+                        <div key={index}>
+                            <Placeholder as="p" animation="glow">
+                                <Placeholder xs={6} style={stylePlaceholder}/>
+                            </Placeholder>
+                        </div>
+                    ))}
+                    </div>
+                )}
             </div>
         </div>
     )

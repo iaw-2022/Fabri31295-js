@@ -48,3 +48,41 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.portfolioPlaceholders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 16px; /* Adjust the gap between items as needed */
+}
+
+/* Style for each individual item */
+.portfolioPlaceholders > div {
+  width: 100%; /* Ensure each item takes the full width of its grid cell */
+  height: 100%;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .portfolioPlaceholders {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Additional responsive styles for even smaller screens */
+@media (max-width: 576px) {
+  .portfolioPlaceholders {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Hace que el navbar sea fijo en la parte superior */
+  .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Ajusta según sea necesario */
+  }
+
+  /* Ajusta otros estilos específicos para dispositivos móviles si es necesario */
+}
